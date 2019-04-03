@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 set -e
 echo "Enter release version: "
 read VERSION
@@ -11,5 +11,4 @@ then
   yarn build:lib
   npm version $VERSION --message "[release] $VERSION"
   npm publish --access=public
-
 fi
