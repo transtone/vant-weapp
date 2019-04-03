@@ -1,30 +1,22 @@
 git checkout master
 git merge dev
 
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 set -e
 echo "Enter release version: "
 read VERSION
 
-read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
+read -p "Releasing $VERSION - are you sure? (y/n)" reply
 echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [ $reply = "y" ]
 then
-  # build
-  npm run build:lib
-  if [[ `git status --porcelain` ]]; 
-  then
-    git add -A
-    git commit -am "[build] $VERSION"
-  fi
-
-  # commit
-  npm version $VERSION --message "[release] $VERSION"
+  #commit
+  git add -A
+  git commit -am "[build] $VERSION"
 
   # publish
   git push origin master
   git push origin refs/tags/v$VERSION
-  npm publish
 
   # sync dev
   git checkout dev
