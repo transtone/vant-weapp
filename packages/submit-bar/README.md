@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-submit-bar": "path/to/vant-weapp/dist/submit-bar/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-submit-bar": "path/to/vant-weapp/lib/submit-bar/index"
 }
 ```
 
@@ -74,7 +83,8 @@
 | disabled | 是否禁用按钮 |  `Boolean` | `false` |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` |
 | currency | 货币符号 |  `String` | `¥` |
-| safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | `Boolean` | `true` |
+| decimal-length | 价格小数点后位数 | `Number` | `2` |
 
 ### Event
 

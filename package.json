@@ -1,6 +1,6 @@
 {
   "name": "@transtone/vant-weapp",
-  "version": "1.5.9",
+  "version": "1.5.10",
   "author": "youzan",
   "license": "MIT",
   "miniprogram": "dist",
